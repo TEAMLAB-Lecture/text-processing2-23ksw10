@@ -70,7 +70,7 @@ def to_camel_case(underscore_str):
             "alreadyCamel"
     """
     if underscore_str.count('_')==len(underscore_str) :
-        return " "*len(word)
+        return " "*len(underscore_str)
     if underscore_str.count('_')==0 :
         return underscore_str
     camelcase_str = ""
