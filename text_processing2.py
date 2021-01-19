@@ -74,7 +74,7 @@ def to_camel_case(underscore_str):
     if underscore_str.count('_')==0 :
         return underscore_str
     camelcase_str = ""
-    first == False
+    first = False
     word = underscore_str.split('_')
     for i in range(0,len(word)):
         if word[i]=='' :
