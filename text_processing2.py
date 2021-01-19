@@ -81,13 +81,13 @@ def to_camel_case(underscore_str):
             continue
         else :
             if first == False :
-                word[i].lower()
-                word[i][0].lower()
-                camelcase_str += word[i]
+                temp=word[i].lower()
+                temp=temp[i][0].lower()
+                camelcase_str += temp
                 first = True
             else :
-                word[i].lower()
-                word[i][0].upper()
-                camelcase_str += word[i]
+                temp=word[i].lower()
+                temp=temp[i][0].upper()
+                camelcase_str += temp
 
     return camelcase_str
