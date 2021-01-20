@@ -28,9 +28,15 @@ def digits_to_words(input_string):
             >>> tp2.digits_to_words(digits_str2)
             'three one four one five'
     """
-    digit_string = None
+    #dict 사용
+    dic = {'0' : 'zero ', '1' : 'one ' ,"2" : "two ", '3' : "three ", '4' : "four " , '5' : "five ", '6': 'six ','7': 'seven ', '8':'eight ' ,'9' : 'nine ' }
+    digit_string = ""
+    for c in input_string :
+        if c.isdigit() == True:
+            digit_string += dic[c]
+    if len(digit_string) > 0:
+        return digit_string[:-1]
     return digit_string
-
 
 """
 컴퓨터 프로그래밍에 많은 명명 규칙이 있지만, 두 규칙이 특히 흔히 쓰입니다. 
@@ -64,5 +70,25 @@ def to_camel_case(underscore_str):
             >>> tp2.to_camel_case(underscore_str3)
             "alreadyCamel"
     """
-    camelcase_str = None
+    if underscore_str.count('_')==len(underscore_str) : # underscore _으로만 이루어졌을 경우
+        return ''
+    if underscore_str.count('_')==0 : # _가 없는 경우
+        return underscore_str
+    camelcase_str = ""
+    first = False # 첫번째 단어를 변환 했냐 유무
+    word = underscore_str.split('_')
+    for i in range(0,len(word)):
+        if word[i]=='' :
+            continue
+        else :
+            if first == False :
+                temp=word[i].lower()
+                #temp=temp[0].lower()+ temp[1:]
+                camelcase_str += temp
+                first = True
+            else :
+                temp=word[i].lower()
+                temp=temp[0].upper()+temp[1:]
+                camelcase_str += temp
+
     return camelcase_str
